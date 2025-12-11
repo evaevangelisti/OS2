@@ -1,84 +1,56 @@
-# Progetto - Sistemi Operativi II Modulo
+# Project - Operating Systems II Module
 
-Il programma gestisce la realizzazione dei due compiti tabulate e flatten, fornendo un'implementazione a singolo processo e multiprocesso.
+This program handles the implementation of two tasks: tabulate and flatten, providing both single-process and multi-process versions.
 
-## Funzionalità
+## Features
 
-Il programma realizza fondamentalmente due compiti
+The program mainly performs two tasks:
 
 ### Tabulate
 
-Dato un testo, produce una tabella contentente per ogni parola del testo le parole immediatamente successive e la loro frequenza di occorrenza.
+Given a text, it produces a table containing, for each word in the text, the words that immediately follow it along with their frequency of occurrence.
 
-I parametri richiesti sono:
+Required parameters:
+	- A text file in Unicode (UTF-8) encoding, structured in sentences ending with ., ?, or ! (other punctuation characters are ignored, except apostrophes).
 
-- un file di testo in codifica Unicode (UTF-8) contenente un testo, strutturato in frasi terminate dai caratteri ., ? o ! (gli altri caratteri di punteggiatura saranno ignorati eccetto gli apostrofi).
-
-L'output è un file CSV contenente una tabella in cui ogni riga riporta una parola e le parole immediatamente successive con le loro frequenze.
+Output is a CSV file containing a table where each row lists a word and its immediately following words with their frequencies.
 
 ### Flatten
 
-Genera un testo in maniera casuale usando una tabella di frequenze, nella stessa forma calcolata da tabulate.
+Generates a text randomly using a frequency table in the same format produced by tabulate.
 
-I parametri richiesti sono:
+Required parameters:
+	- A CSV file containing a table where each row lists a word and its immediately following words with their frequencies;
+	-	The number of words to generate;
+	-	An optional previous word from which to start the generation.
 
-- un file di testo in formato CSV contenente una tabella in cui ogni riga riporta una parola e le parole immediatamente successive con le loro frequenze;
-- il numero di parole da generare;
-- una parola precedente da cui iniziare la generazione (opzionale).
+Output is a text file containing the randomly generated text.
 
-L'output è un file di testo contenente il testo casuale generato.
+## System Requirements
 
-## Requisiti di Sistema
+The program requires the following system components:
+	-	GCC compiler (GNU Compiler Collection)
+	-	GNU Scientific Library (GSL)
 
-Il programma richiede i seguenti requisiti di sistema:
+## Installation
 
-- compilatore GCC (GNU Compiler Collection);
-- libreria GNU Scientific Library (GSL).
-
-## Installazione
-
-L'installazione può essere completata con un semplice make
+The program can be installed using a simple make command:
 
 ```bash
 make
 ```
+## Usage
 
-Se si desidera reinstallare il programma
-
-```bash
-make remake
-```
-
-Per eliminare i file oggetto
-
-```bash
-make clean
-```
-
-Per eliminare il file eseguibile
-
-```bash
-make cleaner
-```
-
-## Utilizzo
-
-Per eseguire il comando tabulate inserire nel terminale
+To run the tabulate task:
 
 ```bash
 ./bin/program tabulate input_file
 ```
 
-Invece, per il compito flatten
+To run the flatten task:
 
 ```bash
 ./bin/program flatten input_file words_to_generate -w previous_word
-```
-
-Eseguire il programma con l'opzione di aiuto per ricevere maggiori informazioni
-
-```bash
-./bin/program -h
 ```
 
 
