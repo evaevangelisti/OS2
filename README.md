@@ -1,4 +1,4 @@
-# Project - Operating Systems II Module
+# Operating Systems II Module
 
 This program handles the implementation of two tasks: tabulate and flatten, providing both single-process and multi-process versions.
 
